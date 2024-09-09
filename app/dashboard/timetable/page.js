@@ -96,9 +96,9 @@ export default function TimeTable() {
     <>
       <DashboardNavigation/>
       <div className="p-6 sm:p-10 bg-background">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <h1 className="text-3xl font-bold mb-8 text-center text-primary">Weekly Timetable</h1>
-          <div className="overflow-x-auto">
+          <div className=" w-full">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-muted text-center">
