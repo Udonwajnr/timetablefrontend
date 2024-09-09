@@ -74,7 +74,7 @@ export default function TimeTable() {
     const generateTimetable = async () => {
       const userId = localStorage.getItem("userId")
         if(!userId){
-          router.push("login")
+          router.push("/login")
         }
    
       const courses = await fetchCourses();

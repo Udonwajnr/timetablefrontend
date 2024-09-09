@@ -27,7 +27,7 @@ export default function CreateCourse() {
   useEffect(() => {
     const userId = localStorage.getItem("userId")
     if(!userId){
-      router.push("login")
+      router.push("/login")
     }
    
     // Fetch the lecturer ID from local storage

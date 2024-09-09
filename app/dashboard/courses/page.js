@@ -15,7 +15,7 @@ export default function CoursesPage() {
   useEffect(() => {
     const userId = localStorage.getItem("userId");
     if (!userId) {
-      router.push("login");
+      router.push("/login");
     }
 
     axios.get('https://timetable-u9eo.onrender.com/api/course')

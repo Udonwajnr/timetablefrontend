@@ -20,7 +20,7 @@ export default function Register() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   useEffect(()=>{
     const userId = localStorage.getItem("userId")
     if(userId){
@@ -46,7 +46,7 @@ export default function Register() {
       const response = await axios.post('https://timetable-u9eo.onrender.com/api/register', formData);
       // Handle successful response here
       alert('Registration successful!');
-      router.push("login");
+      router.push("/login");
     } catch (error) {
       // Handle errors
       if (error.response && error.response.data) {
