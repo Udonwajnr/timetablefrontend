@@ -66,6 +66,8 @@ export default function DashboardNavigation() {
               </nav>
             </SheetContent>
           </Sheet>
+          <button onClick={logOut}>Logout</button>
+
         </div>
       </div>
     </header>
