@@ -51,8 +51,12 @@ export default function Login() {
     }
   };
 
-  console.log(data)
-
+  useEffect(()=>{
+    const userId = localStorage.getItem("userId")
+    if(userId){
+      router.push("/dashboard/courses")
+    }
+  },[])
   return (
     <section className="h-screen flex justify-center items-center">
       <Card className="w-full max-w-md mx-auto">
