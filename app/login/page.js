@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 import { Bars } from 'react-loader-spinner'; // Import the spinner
-
+import Navigation from '../components/Navigation';
 export default function Login() {
   const router = useRouter();
   const [data,setData] = useState([])
@@ -58,47 +58,50 @@ export default function Login() {
     }
   },[])
   return (
-    <section className="h-screen flex justify-center items-center">
-      <Card className="w-full max-w-md mx-auto">
-        <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Enter your email and password to login.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                className={errors.email ? 'border-red-500' : ''}
-              />
-              {errors.email && <p className="text-red-500">{errors.email}</p>}
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleChange}
-                className={errors.password ? 'border-red-500' : ''}
-              />
-              {errors.password && <p className="text-red-500">{errors.password}</p>}
-            </div>
-            {errors.general && <p className="text-red-500">{errors.general}</p>}
-            <CardFooter>
-              <Button className="w-full" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? <Bars color="#3498db" height={24} width={24} /> : 'Login'}
-              </Button>
-            </CardFooter>
-          </form>
-        </CardContent>
-      </Card>
-    </section>
+    <>
+      <Navigation/>
+      <section className="h-screen flex justify-center items-center">
+        <Card className="w-full max-w-md mx-auto">
+          <CardHeader>
+            <CardTitle>Login</CardTitle>
+            <CardDescription>Enter your email and password to login.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={errors.email ? 'border-red-500' : ''}
+                />
+                {errors.email && <p className="text-red-500">{errors.email}</p>}
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className={errors.password ? 'border-red-500' : ''}
+                />
+                {errors.password && <p className="text-red-500">{errors.password}</p>}
+              </div>
+              {errors.general && <p className="text-red-500">{errors.general}</p>}
+              <CardFooter>
+                <Button className="w-full" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? <Bars color="#3498db" height={24} width={24} /> : 'Login'}
+                </Button>
+              </CardFooter>
+            </form>
+          </CardContent>
+        </Card>
+      </section>
+    </>
   );
 }

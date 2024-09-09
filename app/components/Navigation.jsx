@@ -14,7 +14,7 @@ export default function Navigation() {
       </Link>
       <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
         <Link href="/" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-          register
+          Register
         </Link>
         <Link href="/login" className="text-muted-foreground hover:text-foreground" prefetch={false}>
           Login
@@ -35,7 +35,7 @@ export default function Navigation() {
               prefetch={false}
             >
               <HomeIcon className="h-5 w-5" />
-              register
+              Register
             </Link>
             <Link
               href="login"
