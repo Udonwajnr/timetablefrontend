@@ -34,6 +34,8 @@ export default function Login() {
       localStorage.setItem('userId', response.data.user._id);
       console.log(response)
       setData(response)
+      router.push("/dashboard/courses")
+
       // Handle successful response here
 
       // router.push('/dashboard'); // Redirect to a dashboard or another page after login
