@@ -1,9 +1,13 @@
 
+"use client"
 import Link from "next/link"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 
 export default function DashboardNavigation() {
+  const logOut=()=>[
+    localStorage.removeItem("userId")
+  ]
   return (
     <header className="bg-background border-b">
       <div className="container px-4 py-3 md:px-6 md:py-4 flex items-center justify-between">
@@ -21,6 +25,7 @@ export default function DashboardNavigation() {
           <Link href="/dashboard/createcourse" className="text-primary hover:text-primary-foreground" prefetch={false}>
             Create Course
           </Link>
+          <button onClick={logOut}>Logout</button>
         </nav>
         <div className="md:hidden">
           <Sheet>
