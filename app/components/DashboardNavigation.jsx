@@ -3,11 +3,13 @@
 import Link from "next/link"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-
+import { useRouter } from "next/navigation"
 export default function DashboardNavigation() {
-  const logOut=()=>[
+  const router = useRouter()
+  const logOut=()=>{
     localStorage.removeItem("userId")
-  ]
+    router.push('/login')
+  }
   return (
     <header className="bg-background border-b">
       <div className="container px-4 py-3 md:px-6 md:py-4 flex items-center justify-between">
